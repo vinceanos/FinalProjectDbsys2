@@ -1,0 +1,200 @@
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\ApplicationInsights.config
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\roslyn\csc.exe
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\roslyn\vbc.exe
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\roslyn\VBCSCompiler.exe
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\tourfinal.dll.config
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\tourfinal.dll
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\tourfinal.pdb
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\Microsoft.AI.Web.dll
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\System.Web.Helpers.dll
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\System.Web.Mvc.dll
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\System.Web.Razor.dll
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\System.Web.Webpages.dll
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\System.Web.Webpages.Razor.dll
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\Microsoft.AI.Web.xml
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\System.Web.Razor.xml
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\System.Web.Webpages.xml
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\System.Web.Webpages.Razor.xml
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\System.Web.Helpers.xml
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\System.Web.Mvc.xml
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\obj\Debug\tourfinal.dll
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\obj\Debug\tourfinal.pdb
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\EntityFramework.dll
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\EntityFramework.SqlServer.dll
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\EntityFramework.xml
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\bin\EntityFramework.SqlServer.xml
+C:\Users\Vence\OneDrive\Documents\Visual Studio 2015\Projects\tourfinal\tourfinal\obj\Debug\tourfinal.csprojResolveAssemblyReference.cache
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\ApplicationInsights.config
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\roslyn\csc.exe
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\roslyn\System.Collections.Immutable.dll
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\roslyn\System.Reflection.Metadata.dll
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\roslyn\vbc.exe
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\roslyn\VBCSCompiler.exe
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\roslyn\VBCSCompiler.exe.config
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\tourfinal.dll.config
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\tourfinal.dll
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\tourfinal.pdb
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\EntityFramework.dll
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\EntityFramework.SqlServer.dll
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\Microsoft.AI.Agent.Intercept.dll
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\Microsoft.AI.DependencyCollector.dll
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\Microsoft.AI.Web.dll
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\Microsoft.AI.WindowsServer.dll
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\Microsoft.ApplicationInsights.dll
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\Microsoft.Web.Infrastructure.dll
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\System.Web.Helpers.dll
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\System.Web.Mvc.dll
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\System.Web.Razor.dll
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\System.Web.Webpages.Deployment.dll
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\System.Web.Webpages.dll
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\System.Web.Webpages.Razor.dll
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\EntityFramework.xml
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\EntityFramework.SqlServer.xml
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\Microsoft.AI.DependencyCollector.xml
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\Microsoft.AI.Web.xml
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\Microsoft.AI.WindowsServer.xml
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\Microsoft.ApplicationInsights.xml
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\System.Web.Razor.xml
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\System.Web.Webpages.xml
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\System.Web.Webpages.Deployment.xml
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\System.Web.Webpages.Razor.xml
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\System.Web.Helpers.xml
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\bin\System.Web.Mvc.xml
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\obj\Debug\tourfinal.csprojResolveAssemblyReference.cache
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\obj\Debug\tourfinal.dll
+C:\CAPOTE\IMBD\projectindbsys32\tourfinal\obj\Debug\tourfinal.pdb
+D:\projectindbsys32\tourfinal\bin\ApplicationInsights.config
+D:\projectindbsys32\tourfinal\bin\roslyn\csc.exe
+D:\projectindbsys32\tourfinal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\projectindbsys32\tourfinal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\projectindbsys32\tourfinal\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\projectindbsys32\tourfinal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\projectindbsys32\tourfinal\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\projectindbsys32\tourfinal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\projectindbsys32\tourfinal\bin\roslyn\System.Collections.Immutable.dll
+D:\projectindbsys32\tourfinal\bin\roslyn\System.Reflection.Metadata.dll
+D:\projectindbsys32\tourfinal\bin\roslyn\vbc.exe
+D:\projectindbsys32\tourfinal\bin\roslyn\VBCSCompiler.exe
+D:\projectindbsys32\tourfinal\bin\roslyn\VBCSCompiler.exe.config
+D:\projectindbsys32\tourfinal\bin\tourfinal.dll.config
+D:\projectindbsys32\tourfinal\bin\tourfinal.dll
+D:\projectindbsys32\tourfinal\bin\tourfinal.pdb
+D:\projectindbsys32\tourfinal\bin\EntityFramework.dll
+D:\projectindbsys32\tourfinal\bin\EntityFramework.SqlServer.dll
+D:\projectindbsys32\tourfinal\bin\Microsoft.AI.Agent.Intercept.dll
+D:\projectindbsys32\tourfinal\bin\Microsoft.AI.DependencyCollector.dll
+D:\projectindbsys32\tourfinal\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\projectindbsys32\tourfinal\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\projectindbsys32\tourfinal\bin\Microsoft.AI.Web.dll
+D:\projectindbsys32\tourfinal\bin\Microsoft.AI.WindowsServer.dll
+D:\projectindbsys32\tourfinal\bin\Microsoft.ApplicationInsights.dll
+D:\projectindbsys32\tourfinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\projectindbsys32\tourfinal\bin\Microsoft.Web.Infrastructure.dll
+D:\projectindbsys32\tourfinal\bin\System.Web.Helpers.dll
+D:\projectindbsys32\tourfinal\bin\System.Web.Mvc.dll
+D:\projectindbsys32\tourfinal\bin\System.Web.Razor.dll
+D:\projectindbsys32\tourfinal\bin\System.Web.Webpages.Deployment.dll
+D:\projectindbsys32\tourfinal\bin\System.Web.Webpages.dll
+D:\projectindbsys32\tourfinal\bin\System.Web.Webpages.Razor.dll
+D:\projectindbsys32\tourfinal\bin\EntityFramework.xml
+D:\projectindbsys32\tourfinal\bin\EntityFramework.SqlServer.xml
+D:\projectindbsys32\tourfinal\bin\Microsoft.AI.DependencyCollector.xml
+D:\projectindbsys32\tourfinal\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\projectindbsys32\tourfinal\bin\Microsoft.AI.Web.xml
+D:\projectindbsys32\tourfinal\bin\Microsoft.AI.WindowsServer.xml
+D:\projectindbsys32\tourfinal\bin\Microsoft.ApplicationInsights.xml
+D:\projectindbsys32\tourfinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\projectindbsys32\tourfinal\bin\System.Web.Razor.xml
+D:\projectindbsys32\tourfinal\bin\System.Web.Webpages.xml
+D:\projectindbsys32\tourfinal\bin\System.Web.Webpages.Deployment.xml
+D:\projectindbsys32\tourfinal\bin\System.Web.Webpages.Razor.xml
+D:\projectindbsys32\tourfinal\bin\System.Web.Helpers.xml
+D:\projectindbsys32\tourfinal\bin\System.Web.Mvc.xml
+D:\projectindbsys32\tourfinal\obj\Debug\tourfinal.csprojResolveAssemblyReference.cache
+D:\projectindbsys32\tourfinal\obj\Debug\tourfinal.dll
+D:\projectindbsys32\tourfinal\obj\Debug\tourfinal.pdb
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\ApplicationInsights.config
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\roslyn\csc.exe
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\roslyn\vbc.exe
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\roslyn\VBCSCompiler.exe
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\tourfinal.dll.config
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\tourfinal.dll
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\tourfinal.pdb
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\EntityFramework.dll
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\EntityFramework.SqlServer.dll
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\Microsoft.AI.Web.dll
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\System.Web.Helpers.dll
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\System.Web.Mvc.dll
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\System.Web.Razor.dll
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\System.Web.Webpages.dll
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\System.Web.Webpages.Razor.dll
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\EntityFramework.xml
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\EntityFramework.SqlServer.xml
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\Microsoft.AI.Web.xml
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\System.Web.Razor.xml
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\System.Web.Webpages.xml
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\System.Web.Webpages.Razor.xml
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\System.Web.Helpers.xml
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\bin\System.Web.Mvc.xml
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\obj\Debug\tourfinal.csprojResolveAssemblyReference.cache
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\obj\Debug\tourfinal.dll
+C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\tourfinal\obj\Debug\tourfinal.pdb

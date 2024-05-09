@@ -1,0 +1,143 @@
+﻿                                                                                                                                                                                                                                                                            @model tourfinal.Models.User
+
+@{
+    ViewBag.Title = "Signup";
+}
+
+<style>
+    body {
+        background-image: url('../../image/loginbackground.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        color: white;
+    }
+
+    .control-label {
+        color: white;
+    }
+
+    .form-control {
+        background-color: rgba(255, 255, 255, 0.7);
+        color: black;
+    }
+
+    .signup-container {
+        margin-top: 50px;
+    }
+
+    h2 {
+        margin-top: 60px;
+        margin-bottom: 5px;
+    }
+
+  
+    .image-container {
+        margin-top: -10px;
+        text-align: center; 
+        position: relative; 
+    }
+
+        .image-container img {
+            margin-top: 0px;
+            max-width: 100%; 
+            height: auto; 
+            max-height: 500px; 
+            display: inline-block; 
+            filter: blur(1.5px);
+            border: solid;
+        }
+
+    .image-text {
+        position: absolute; 
+        top: 50%; 
+        left: 50%; 
+        transform: translate(-50%, -50%);
+        color: white; 
+        font-size: 30px; 
+        font-weight: bold; 
+        font-family: Brush Script MT; 
+        
+    }
+</style>
+
+<h2> SIGN-UP </h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="signup-container">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <h4>User</h4>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.RoleID, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownListFor(model => model.RoleID, new SelectList(new[]
+                            {
+                                new SelectListItem { Text = "Admin", Value = "1" },
+                                new SelectListItem { Text = "Customer", Value = "2" }
+                            }, "Value", "Text"), new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.RoleID, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Signup" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="image-container">
+            <!-- Centered and resized image -->
+            <img src="~/image/rvan.jpg" class="img-responsive" alt="Image" />
+            <div class="image-text"> ONWARDS </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    @Html.ActionLink("Login", "Login")
+</div>
+
+@section Scripts {
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}
