@@ -18,6 +18,8 @@
         <AssociationConnector Association="TsuperVansModel.FK_UserRegistration_Role" ManuallyRouted="false" />
         <EntityTypeShape EntityType="TsuperVansModel.DestinationDetail" Width="1.5" PointX="5.375" PointY="0.875" />
         <AssociationConnector Association="TsuperVansModel.FK_Booking_DestinationID" />
+        <AssociationConnector Association="TsuperVansModel.FK_Booking_User1" />
+        <AssociationConnector Association="TsuperVansModel.FK_Payment_Booking1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
