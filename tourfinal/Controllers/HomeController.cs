@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using tourfinal.Models;
 using tourfinal.Email;
 
+
 namespace tourfinal.Controllers
 {
     public class HomeController : Controller
@@ -35,21 +36,55 @@ namespace tourfinal.Controllers
 
         public ActionResult DestinationDetail(int? id)
             {
-                var destination = db.DestinationDetails.FirstOrDefault(d => d.DestinationID == id);
-                if (destination == null)
+            var destination = db.DestinationDetails.FirstOrDefault(d => d.DestinationID == id);
+            var booking = db.Bookings.FirstOrDefault(b => b.DestinationID == id);
+            {
+                if (destination == null || booking == null)
                 {
+
                     return RedirectToAction("Index");
                 }
+                var viewModel = new DestinationBookingViewModel
+                {
+                    Destination = destination,
+                    Booking = booking
+                };
 
-                return View(destination);
+                return View(viewModel);
+            }
+        }
+        public ActionResult BookNow(int destinationID, Booking booking)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+
+                    booking.DestinationID = destinationID;
+
+                    db.Bookings.Add(booking);
+
+                    
+                    if (db.SaveChanges() > 0)
+                    {
+                      
+                        return RedirectToAction("BookingSuccess");
+                    }
+                }
+                catch (Exception )
+                {
+                  
+                    ModelState.AddModelError("", "An error occurred while processing your booking. Please try again later.");
+                }
             }
 
-      
+            return View();
+        }
 
 
 
-    // GET: Home/Details/5
-    [Authorize(Roles = "Admin")]
+        // GET: Home/Details/5
+        [Authorize(Roles = "Admin")]
         public ActionResult UserManagement()
         {
             var user = db.Users.ToList();

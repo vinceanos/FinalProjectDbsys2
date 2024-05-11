@@ -80,5 +80,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="DriverUsers">
+      <EntityTypeMapping TypeName="TsuperVansModel.DriverUser">
+        <MappingFragment StoreEntitySet="DriverUsers">
+          <ScalarProperty Name="VehicleModel" ColumnName="VehicleModel" />
+          <ScalarProperty Name="DestinationID" ColumnName="DestinationID" />
+          <ScalarProperty Name="DriverLicenseNumber" ColumnName="DriverLicenseNumber" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

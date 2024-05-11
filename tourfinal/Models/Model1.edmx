@@ -28,6 +28,15 @@
           <Property Name="Location" Type="nvarchar" MaxLength="255" />
           <Property Name="ImageURL" Type="nvarchar(max)" />
         </EntityType>
+        <EntityType Name="DriverUsers">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DriverLicenseNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="VehicleModel" Type="nvarchar" MaxLength="50" />
+          <Property Name="DestinationID" Type="int" />
+        </EntityType>
         <EntityType Name="Payment">
           <Key>
             <PropertyRef Name="PaymentID" />
@@ -152,6 +161,7 @@
         <EntityContainer Name="TsuperVansModelStoreContainer">
           <EntitySet Name="Booking" EntityType="Self.Booking" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DestinationDetails" EntityType="Self.DestinationDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DriverUsers" EntityType="Self.DriverUsers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Review" EntityType="Self.Review" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
@@ -351,6 +361,7 @@
             <End Role="DestinationDetail" EntitySet="DestinationDetails" />
             <End Role="Booking" EntitySet="Bookings" />
           </AssociationSet>
+          <EntitySet Name="DriverUsers" EntityType="TsuperVansModel.DriverUser" />
         </EntityContainer>
         <EntityType Name="DestinationDetail">
           <Key>
@@ -375,6 +386,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="DriverUser">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DriverLicenseNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DestinationID" Type="Int32" />
+          <Property Name="VehicleModel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -457,6 +477,16 @@
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="DestinationName" ColumnName="DestinationName" />
                 <ScalarProperty Name="DestinationID" ColumnName="DestinationID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DriverUsers">
+            <EntityTypeMapping TypeName="TsuperVansModel.DriverUser">
+              <MappingFragment StoreEntitySet="DriverUsers">
+                <ScalarProperty Name="VehicleModel" ColumnName="VehicleModel" />
+                <ScalarProperty Name="DestinationID" ColumnName="DestinationID" />
+                <ScalarProperty Name="DriverLicenseNumber" ColumnName="DriverLicenseNumber" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

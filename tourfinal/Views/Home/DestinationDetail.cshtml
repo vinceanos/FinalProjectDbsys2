@@ -1,44 +1,35 @@
-﻿@model tourfinal.Models.DestinationDetail
+﻿@model tourfinal.DestinationBookingViewModel
 @{
-    ViewBag.Title = "Destination Detail - " + Model.DestinationName;
+    ViewBag.Title = "Destination Detail - " + Model.Destination.DestinationName;
 }
 
 <div class="container">
-    <h2>@Model.DestinationName</h2>
+    <h2>@Model.Destination.DestinationName</h2>
 
     <div class="row">
         <div class="col-md-6">
-            <!-- Display the main image of the destination -->
-            <img src="@Model.ImageURL" class="img-fluid" alt="@Model.DestinationName">
+            <img src="@Model.Destination.ImageURL" class="img-fluid" alt="@Model.Destination.DestinationName">
         </div>
         <div class="col-md-6">
-            <!-- Display a captivating description of the destination -->
-            <p>@Model.Description</p>
+            <p>@Model.Destination.Description</p>
+            <h4>Booking Details:</h4>
+            <form action="@Url.Action("BookNow", "Home", new { destinationID = Model.Destination.DestinationID })" method="post">
+                @Html.HiddenFor(model => model.Booking.BookingID)
+                <label>Date:</label>
+                <input type="date" name="Date" value="@Model.Booking.Date.ToString()" required><br>
+                <label>Status:</label>
+                <input type="text" name="Status" value="@Model.Booking.Status" required><br>
+                <label>Feedback:</label>
+                <textarea name="Feedback">@Model.Booking.Feedback</textarea><br>
 
-            <!-- Highlight key features or attractions of the destination -->
-            <h4>Key Features:</h4>
-            <ul>
-                <li>Feature 1</li>
-                <li>Feature 2</li>
-                <li>Feature 3</li>
-                <!-- Add more features as needed -->
-            </ul>
+                <!-- Add other booking details as needed -->
 
-            <!-- Display testimonials or reviews from previous visitors -->
-            <h4>What Visitors Say:</h4>
-            <div class="testimonial">
-                <blockquote>
-                    "Testimonial from a satisfied visitor."
-                    <footer> - Visitor Name</footer>
-                </blockquote>
-            </div>
-
-            <!-- Encourage users to book the destination -->
+                <button type="submit" class="btn btn-primary">Update Booking</button>
+            </form>
             <div>
                 <h4>Ready to Explore?</h4>
-                <p>Book your trip now and experience the beauty of @Model.DestinationName!</p>
-                <!-- Add a button or link to the booking page -->
-                <a href="@Url.Action("BookNow", "Home", new { destinationID = Model.DestinationID })" class="btn btn-primary">Book Now</a>
+                <p>Book your trip now and experience the beauty of @Model.Destination.DestinationName!</p>
+                <a href="@Url.Action("BookNow", "Home", new { destinationID = Model.Destination.DestinationID })" class="btn btn-success">Book Now</a>
             </div>
         </div>
     </div>

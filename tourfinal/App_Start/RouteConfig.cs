@@ -18,6 +18,11 @@ namespace tourfinal
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+            routes.MapRoute(
+    name: "BookNow",
+    url: "Home/BookNow/{destinationID}",
+    defaults: new { controller = "Home", action = "BookNow", destinationID = UrlParameter.Optional }
+);
         }
     }
 }

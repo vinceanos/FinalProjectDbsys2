@@ -23,6 +23,15 @@
     <Property Name="Location" Type="nvarchar" MaxLength="255" />
     <Property Name="ImageURL" Type="nvarchar(max)" />
   </EntityType>
+  <EntityType Name="DriverUsers">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DriverLicenseNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="VehicleModel" Type="nvarchar" MaxLength="50" />
+    <Property Name="DestinationID" Type="int" />
+  </EntityType>
   <EntityType Name="Payment">
     <Key>
       <PropertyRef Name="PaymentID" />
@@ -147,6 +156,7 @@
   <EntityContainer Name="TsuperVansModelStoreContainer">
     <EntitySet Name="Booking" EntityType="Self.Booking" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DestinationDetails" EntityType="Self.DestinationDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DriverUsers" EntityType="Self.DriverUsers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Review" EntityType="Self.Review" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />

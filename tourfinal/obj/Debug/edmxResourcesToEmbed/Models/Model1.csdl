@@ -165,6 +165,7 @@
       <End Role="DestinationDetail" EntitySet="DestinationDetails" />
       <End Role="Booking" EntitySet="Bookings" />
     </AssociationSet>
+    <EntitySet Name="DriverUsers" EntityType="TsuperVansModel.DriverUser" />
   </EntityContainer>
   <EntityType Name="DestinationDetail">
     <Key>
@@ -189,4 +190,13 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="DriverUser">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DriverLicenseNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DestinationID" Type="Int32" />
+    <Property Name="VehicleModel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

@@ -51,7 +51,7 @@ namespace tourfinal.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Signup(User u, ref string errMsg)
+        public ActionResult Signup(User u)
         {
             if (ModelState.IsValid)
             {
@@ -63,6 +63,31 @@ namespace tourfinal.Controllers
             }
             return View();
         }
+
+        [HttpPost]
+        public ActionResult RegisterDriver(DriverUser model)
+        {
+            if (ModelState.IsValid)
+            {
+                var driverUser = new DriverUser
+                {
+                    // Populate other properties of the driver user from the registration form
+                    DriverLicenseNumber = model.DriverLicenseNumber,
+                    VehicleModel = model.VehicleModel,
+                    DestinationID = model.DestinationID  // SelectedDestinationID comes from the form
+                };
+
+                db.DriverUsers.Add(driverUser);
+                db.SaveChanges();
+
+                // Redirect to a success page or another action
+                return RedirectToAction("RegistrationSuccess");
+            }
+
+            // If model state is not valid, return to the registration form with validation errors
+            return View(model);
+        }
+
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
