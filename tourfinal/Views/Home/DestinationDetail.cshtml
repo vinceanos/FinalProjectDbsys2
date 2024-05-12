@@ -1,4 +1,4 @@
-﻿@model tourfinal.DestinationBookingViewModel
+﻿@model tourfinal.Models.Booking1
 @{
     ViewBag.Title = "Destination Detail - " + Model.Destination.DestinationName;
 }
@@ -15,12 +15,18 @@
             <h4>Booking Details:</h4>
             <form action="@Url.Action("BookNow", "Home", new { destinationID = Model.Destination.DestinationID })" method="post">
                 @Html.HiddenFor(model => model.Booking.BookingID)
-                <label>Date:</label>
-                <input type="date" name="Date" value="@Model.Booking.Date.ToString()" required><br>
-                <label>Status:</label>
-                <input type="text" name="Status" value="@Model.Booking.Status" required><br>
-                <label>Feedback:</label>
-                <textarea name="Feedback">@Model.Booking.Feedback</textarea><br>
+                <label>Booking Date:</label>
+                <input type="date" name="Booking.Booking_Date" value="@Model.Booking.Booking_Date.ToString()" required><br>
+                <label>Booking Number:</label>
+                <input type="text" name="Booking.Booking_Number" value="@Model.Booking.Booking_Number" required><br>
+                <label>Number of Travellers:</label>
+                <input type="number" name="Booking.Number_of_Travellers" value="@Model.Booking.Number_of_Travellers" required><br>
+                <label>Type of Booking:</label>
+                <input type="text" name="Booking.Type_of_Booking" value="@Model.Booking.Type_of_Booking" required><br>
+                <label>Package Booked:</label>
+                <input type="text" name="Booking.Package_Booked" value="@Model.Booking.Package_Booked" required><br>
+                <label>Price:</label>
+                <input type="number" step="0.01" name="Booking.Price" value="@Model.Booking.Price" required><br>
 
                 <!-- Add other booking details as needed -->
 

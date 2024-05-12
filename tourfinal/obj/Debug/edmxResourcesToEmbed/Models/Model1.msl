@@ -90,5 +90,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Bookings1">
+      <EntityTypeMapping TypeName="TsuperVansModel.Booking1">
+        <MappingFragment StoreEntitySet="Bookings">
+          <ScalarProperty Name="DestinationID" ColumnName="DestinationID" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Package_Booked" ColumnName="Package_Booked" />
+          <ScalarProperty Name="Type_of_Booking" ColumnName="Type_of_Booking" />
+          <ScalarProperty Name="Number_of_Travellers" ColumnName="Number_of_Travellers" />
+          <ScalarProperty Name="Booking_Number" ColumnName="Booking_Number" />
+          <ScalarProperty Name="Booking_Date" ColumnName="Booking_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -180,6 +180,9 @@
     <Compile Include="Models\Booking.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Booking1.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\DestinationDetail.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

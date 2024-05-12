@@ -21,6 +21,7 @@
         <AssociationConnector Association="TsuperVansModel.FK_Booking_User1" />
         <AssociationConnector Association="TsuperVansModel.FK_Payment_Booking1" />
         <EntityTypeShape EntityType="TsuperVansModel.DriverUser" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="TsuperVansModel.Booking1" Width="1.5" PointX="7.375" PointY="7.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

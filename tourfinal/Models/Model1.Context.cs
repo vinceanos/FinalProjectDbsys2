@@ -33,5 +33,6 @@ namespace tourfinal.Models
         public virtual DbSet<Van> Vans { get; set; }
         public virtual DbSet<DestinationDetail> DestinationDetails { get; set; }
         public virtual DbSet<DriverUser> DriverUsers { get; set; }
+        public virtual DbSet<Booking1> Bookings1 { get; set; }
     }
 }

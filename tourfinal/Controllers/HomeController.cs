@@ -36,51 +36,57 @@ namespace tourfinal.Controllers
 
         public ActionResult DestinationDetail(int? id)
             {
+            if (id == null)
+            {
+                return RedirectToAction("Index");
+            }
+
             var destination = db.DestinationDetails.FirstOrDefault(d => d.DestinationID == id);
             var booking = db.Bookings.FirstOrDefault(b => b.DestinationID == id);
+
+            if (destination == null || booking == null)
             {
-                if (destination == null || booking == null)
-                {
-
-                    return RedirectToAction("Index");
-                }
-                var viewModel = new DestinationBookingViewModel
-                {
-                    Destination = destination,
-                    Booking = booking
-                };
-
-                return View(viewModel);
+                return RedirectToAction("Index");
             }
+
+            var viewModel = new DestinationBookingViewModel
+            {
+                Destination = destination,
+                Booking = booking as Booking1
+            };
+
+            return View(viewModel);
         }
-        public ActionResult BookNow(int destinationID, Booking booking)
+
+        public ActionResult BookNow(int destinationID)
+        {
+            var booking = new Booking { DestinationID = destinationID };
+            return View(booking);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult BookNow(Booking booking)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-
-                    booking.DestinationID = destinationID;
-
                     db.Bookings.Add(booking);
 
-                    
                     if (db.SaveChanges() > 0)
                     {
-                      
                         return RedirectToAction("BookingSuccess");
                     }
                 }
-                catch (Exception )
+                catch (Exception)
                 {
-                  
                     ModelState.AddModelError("", "An error occurred while processing your booking. Please try again later.");
                 }
             }
 
-            return View();
+            return View(booking);
         }
-
 
 
         // GET: Home/Details/5

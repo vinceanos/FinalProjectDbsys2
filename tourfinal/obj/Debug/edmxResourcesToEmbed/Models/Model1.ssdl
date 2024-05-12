@@ -13,6 +13,18 @@
     <Property Name="History" Type="nvarchar" MaxLength="50" />
     <Property Name="DestinationID" Type="int" />
   </EntityType>
+  <EntityType Name="Bookings">
+    <Key>
+      <PropertyRef Name="Booking_Date" />
+    </Key>
+    <Property Name="Booking_Date" Type="date" Nullable="false" />
+    <Property Name="Booking_Number" Type="varchar" MaxLength="20" />
+    <Property Name="Number_of_Travellers" Type="int" />
+    <Property Name="Type_of_Booking" Type="varchar" MaxLength="50" />
+    <Property Name="Package_Booked" Type="varchar" MaxLength="100" />
+    <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="DestinationID" Type="int" />
+  </EntityType>
   <EntityType Name="DestinationDetails">
     <Key>
       <PropertyRef Name="DestinationID" />
@@ -155,6 +167,7 @@
   </Association>
   <EntityContainer Name="TsuperVansModelStoreContainer">
     <EntitySet Name="Booking" EntityType="Self.Booking" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bookings" EntityType="Self.Bookings" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DestinationDetails" EntityType="Self.DestinationDetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DriverUsers" EntityType="Self.DriverUsers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />

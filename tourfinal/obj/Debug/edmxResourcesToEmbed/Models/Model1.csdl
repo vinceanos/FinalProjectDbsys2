@@ -166,6 +166,7 @@
       <End Role="Booking" EntitySet="Bookings" />
     </AssociationSet>
     <EntitySet Name="DriverUsers" EntityType="TsuperVansModel.DriverUser" />
+    <EntitySet Name="Bookings1" EntityType="TsuperVansModel.Booking1" />
   </EntityContainer>
   <EntityType Name="DestinationDetail">
     <Key>
@@ -198,5 +199,17 @@
     <Property Name="DriverLicenseNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="DestinationID" Type="Int32" />
     <Property Name="VehicleModel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Booking1">
+    <Key>
+      <PropertyRef Name="Booking_Date" />
+    </Key>
+    <Property Name="Booking_Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Booking_Number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Number_of_Travellers" Type="Int32" />
+    <Property Name="Type_of_Booking" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Package_Booked" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Price" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="DestinationID" Type="Int32" />
   </EntityType>
 </Schema>

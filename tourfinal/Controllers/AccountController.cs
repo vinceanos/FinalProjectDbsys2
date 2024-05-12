@@ -60,21 +60,24 @@ namespace tourfinal.Controllers
                 {
                     return RedirectToAction("Login");
                 }
-            }
+            }   
             return View();
         }
-
+        public ActionResult RegisterDriver()
+        {
+            return View();
+        }
         [HttpPost]
-        public ActionResult RegisterDriver(DriverUser model)
+        public ActionResult RegisterDriver(DriverUser m)
         {
             if (ModelState.IsValid)
             {
                 var driverUser = new DriverUser
                 {
                     // Populate other properties of the driver user from the registration form
-                    DriverLicenseNumber = model.DriverLicenseNumber,
-                    VehicleModel = model.VehicleModel,
-                    DestinationID = model.DestinationID  // SelectedDestinationID comes from the form
+                    DriverLicenseNumber = m.DriverLicenseNumber,
+                    VehicleModel = m.VehicleModel,
+                    DestinationID = m.DestinationID  // SelectedDestinationID comes from the form
                 };
 
                 db.DriverUsers.Add(driverUser);
@@ -85,7 +88,7 @@ namespace tourfinal.Controllers
             }
 
             // If model state is not valid, return to the registration form with validation errors
-            return View(model);
+            return View(m);
         }
 
         public ActionResult Logout()

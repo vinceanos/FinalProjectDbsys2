@@ -18,6 +18,18 @@
           <Property Name="History" Type="nvarchar" MaxLength="50" />
           <Property Name="DestinationID" Type="int" />
         </EntityType>
+        <EntityType Name="Bookings">
+          <Key>
+            <PropertyRef Name="Booking_Date" />
+          </Key>
+          <Property Name="Booking_Date" Type="date" Nullable="false" />
+          <Property Name="Booking_Number" Type="varchar" MaxLength="20" />
+          <Property Name="Number_of_Travellers" Type="int" />
+          <Property Name="Type_of_Booking" Type="varchar" MaxLength="50" />
+          <Property Name="Package_Booked" Type="varchar" MaxLength="100" />
+          <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="DestinationID" Type="int" />
+        </EntityType>
         <EntityType Name="DestinationDetails">
           <Key>
             <PropertyRef Name="DestinationID" />
@@ -160,6 +172,7 @@
         </Association>
         <EntityContainer Name="TsuperVansModelStoreContainer">
           <EntitySet Name="Booking" EntityType="Self.Booking" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bookings" EntityType="Self.Bookings" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DestinationDetails" EntityType="Self.DestinationDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DriverUsers" EntityType="Self.DriverUsers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
@@ -362,6 +375,7 @@
             <End Role="Booking" EntitySet="Bookings" />
           </AssociationSet>
           <EntitySet Name="DriverUsers" EntityType="TsuperVansModel.DriverUser" />
+          <EntitySet Name="Bookings1" EntityType="TsuperVansModel.Booking1" />
         </EntityContainer>
         <EntityType Name="DestinationDetail">
           <Key>
@@ -394,6 +408,18 @@
           <Property Name="DriverLicenseNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DestinationID" Type="Int32" />
           <Property Name="VehicleModel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Booking1">
+          <Key>
+            <PropertyRef Name="Booking_Date" />
+          </Key>
+          <Property Name="Booking_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Booking_Number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Number_of_Travellers" Type="Int32" />
+          <Property Name="Type_of_Booking" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Package_Booked" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Price" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="DestinationID" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -487,6 +513,19 @@
                 <ScalarProperty Name="DestinationID" ColumnName="DestinationID" />
                 <ScalarProperty Name="DriverLicenseNumber" ColumnName="DriverLicenseNumber" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bookings1">
+            <EntityTypeMapping TypeName="TsuperVansModel.Booking1">
+              <MappingFragment StoreEntitySet="Bookings">
+                <ScalarProperty Name="DestinationID" ColumnName="DestinationID" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Package_Booked" ColumnName="Package_Booked" />
+                <ScalarProperty Name="Type_of_Booking" ColumnName="Type_of_Booking" />
+                <ScalarProperty Name="Number_of_Travellers" ColumnName="Number_of_Travellers" />
+                <ScalarProperty Name="Booking_Number" ColumnName="Booking_Number" />
+                <ScalarProperty Name="Booking_Date" ColumnName="Booking_Date" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
