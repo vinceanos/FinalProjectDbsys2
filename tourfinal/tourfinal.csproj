@@ -132,11 +132,31 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="image\anjo.jpg" />
+    <Content Include="image\avila.jpg" />
+    <Content Include="image\blue.jpg" />
+    <Content Include="image\blue2.jpg" />
+    <Content Include="image\cross.jpg" />
+    <Content Include="image\falls.jpg" />
+    <Content Include="image\gene.jpg" />
+    <Content Include="image\langit.jpg" />
     <Content Include="image\loginbackground.jpg" />
+    <Content Include="image\mijares.jpg" />
+    <Content Include="image\oslob.jpg" />
+    <Content Include="image\rose.jpg" />
     <Content Include="image\rvan.jpg" />
+    <Content Include="image\safari.jpg" />
+    <Content Include="image\service1.jpg" />
+    <Content Include="image\service2.jpg" />
+    <Content Include="image\service3.jpg" />
+    <Content Include="image\sirao.jpg" />
+    <Content Include="image\temple.jpg" />
+    <Content Include="image\tops.jpg" />
     <Content Include="image\van1.jpg" />
     <Content Include="image\van3.jpg" />
+    <Content Include="image\vince.jpg" />
     <Content Include="image\white.jpg" />
+    <Content Include="image\white2.jpg" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -167,18 +187,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Classes\BookingViewModel.cs" />
     <Compile Include="Classes\Resources.cs" />
     <Compile Include="Classes\UserManager.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Booking1Controller.cs" />
     <Compile Include="Controllers\DestinationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DestinationBookingViewModel.cs" />
     <Compile Include="Email\MailManager.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Booking.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Booking1.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -211,6 +230,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Role.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs">
@@ -246,6 +268,11 @@
     <Content Include="Views\Home\UserManagement.cshtml" />
     <Content Include="Views\Home\Email.cshtml" />
     <Content Include="Views\Home\DestinationDetail.cshtml" />
+    <Content Include="Views\Booking1\Create.cshtml" />
+    <Content Include="Views\Booking1\Delete.cshtml" />
+    <Content Include="Views\Booking1\Details.cshtml" />
+    <Content Include="Views\Booking1\Edit.cshtml" />
+    <Content Include="Views\Booking1\Index.cshtml" />
     <Content Include="Views\Home\BookNow.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

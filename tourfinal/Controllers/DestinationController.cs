@@ -17,7 +17,7 @@ namespace tourfinal.Controllers
         }
 
         public DbSet<DestinationDetail> DestinationDetails { get; set; }
-        public DbSet<Booking> Bookings { get; set; }
+        public DbSet<Booking1> Bookings { get; set; }
        
        
 

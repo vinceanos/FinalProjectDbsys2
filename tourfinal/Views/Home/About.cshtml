@@ -1,7 +1,86 @@
-﻿
-@{
-   ViewBag.Title = "Service";
+﻿@{
+    ViewBag.Title = "About";
+
+    var persons = new List<dynamic>
+    {
+        new { Name = "Vince Hector Anos", ImageUrl = "/image/vince.jpg", Details = "Hacker" },
+        new { Name = "John Elmar Avila", ImageUrl = "/image/avila.jpg", Details = "Hipster" },
+        new { Name = "Gene Adrian Capote", ImageUrl = "/image/gene.jpg", Details = "Hustler" },
+        new { Name = "Luisse Angelo Mijares", ImageUrl = "/image/mijares.jpg", Details = "Technical Writer" }
+    };
 }
 
-<h2>About</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <style>
+        body {
+            background-image: url('/image/white.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
 
+        .person {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+            .person img {
+                width: 150px;
+                height: 150px;
+                object-fit: cover;
+                border-radius: 50%;
+                border: 5px solid white;
+            }
+
+            .person h4 {
+                padding: 10px;
+                background-color: gray;
+                color: white;
+                border: 2px solid white;
+                border-radius: 5px;
+                margin-top: 10px;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>About Us</h2>
+
+        <div class="row">
+            @foreach (var person in persons)
+            {
+                <div class="col-md-3">
+                    <div class="person">
+                        <img src="@person.ImageUrl" alt="@person.Name" class="img-responsive" />
+                        <h4>@person.Name</h4>
+                        <p>@person.Details</p>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    Our team comprises passionate and dedicated developers who are committed to achieving excellence in every aspect of our work. We thrive on continuous learning and improvement, constantly exploring new technologies and methodologies to deliver innovative solutions.
+
+                    This application is crafted to revolutionize van booking and rental services, providing a seamless and user-friendly platform for both customers and van drivers. Similar to popular transportation service apps like Angkas and Maxim, our goal is to simplify the process of connecting passengers with reliable van services.
+
+                    With a focus on user experience and efficiency, our application streamlines the booking process, ensuring prompt and convenient transportation solutions. We prioritize safety, reliability, and convenience, aiming to enhance the overall experience for both passengers and service providers.
+
+                    Through collaborative efforts and a forward-thinking approach, our team strives to set new standards in the transportation industry, making van booking and rental services accessible and efficient for everyone.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

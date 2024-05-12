@@ -5,23 +5,20 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="10218849d0444b079ef870457c1a281e" Name="Diagram1" ZoomLevel="74">
-        <EntityTypeShape EntityType="TsuperVansModel.Booking" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="TsuperVansModel.Payment" Width="1.5" PointX="7.5" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TsuperVansModel.Review" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
         <EntityTypeShape EntityType="TsuperVansModel.Role" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="TsuperVansModel.User" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
         <EntityTypeShape EntityType="TsuperVansModel.Van" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="TsuperVansModel.FK_Booking_User" ManuallyRouted="false" />
-        <AssociationConnector Association="TsuperVansModel.FK_Booking_Van" ManuallyRouted="false" />
-        <AssociationConnector Association="TsuperVansModel.FK_Payment_Booking" ManuallyRouted="false" />
         <AssociationConnector Association="TsuperVansModel.FK_Review_User" ManuallyRouted="false" />
         <AssociationConnector Association="TsuperVansModel.FK_UserRegistration_Role" ManuallyRouted="false" />
         <EntityTypeShape EntityType="TsuperVansModel.DestinationDetail" Width="1.5" PointX="5.375" PointY="0.875" />
-        <AssociationConnector Association="TsuperVansModel.FK_Booking_DestinationID" />
         <AssociationConnector Association="TsuperVansModel.FK_Booking_User1" />
         <AssociationConnector Association="TsuperVansModel.FK_Payment_Booking1" />
         <EntityTypeShape EntityType="TsuperVansModel.DriverUser" Width="1.5" PointX="7.375" PointY="0.75" />
         <EntityTypeShape EntityType="TsuperVansModel.Booking1" Width="1.5" PointX="7.375" PointY="7.75" />
+        <EntityTypeShape EntityType="TsuperVansModel.sysdiagram" Width="1.5" PointX="0.75" PointY="8.75" />
+        <AssociationConnector Association="TsuperVansModel.FK_Bookings_DestinationDetails" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

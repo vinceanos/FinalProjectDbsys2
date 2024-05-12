@@ -26,7 +26,7 @@ namespace tourfinal.Controllers
         // GET: Home
         [Authorize(Roles = "Admin,Customer")]
 
-        public ActionResult Index()
+        public ActionResult Index() 
         {
             var destinations = db.DestinationDetails.ToList();
             return View(destinations);
@@ -35,16 +35,16 @@ namespace tourfinal.Controllers
 
 
         public ActionResult DestinationDetail(int? id)
-            {
+        {
             if (id == null)
             {
                 return RedirectToAction("Index");
             }
 
             var destination = db.DestinationDetails.FirstOrDefault(d => d.DestinationID == id);
-            var booking = db.Bookings.FirstOrDefault(b => b.DestinationID == id);
+            var booking = db.Bookings1.FirstOrDefault(b => b.DestinationID == id);
 
-            if (destination == null || booking == null)
+            if (destination == null)
             {
                 return RedirectToAction("Index");
             }
@@ -52,31 +52,40 @@ namespace tourfinal.Controllers
             var viewModel = new DestinationBookingViewModel
             {
                 Destination = destination,
-                Booking = booking as Booking1
+                BookingID = booking // No need for casting
             };
 
             return View(viewModel);
         }
 
+
         public ActionResult BookNow(int destinationID)
         {
-            var booking = new Booking { DestinationID = destinationID };
+            var booking = new Booking1 { DestinationID = destinationID };
             return View(booking);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult BookNow(Booking booking)
+        public ActionResult BookNow(Booking1 booking)
         {
             if (ModelState.IsValid)
             {
+                var existingBooking = db.Bookings1.FirstOrDefault(b => b.Booking_Number == booking.Booking_Number);
+
+                if (existingBooking != null)
+                {
+                    ModelState.AddModelError("", "A booking with this number already exists. Please use a different number.");
+                    return View(booking);
+                }
+
                 try
                 {
-                    db.Bookings.Add(booking);
+                    db.Bookings1.Add(booking);
 
                     if (db.SaveChanges() > 0)
                     {
-                        return RedirectToAction("BookingSuccess");
+                        return RedirectToAction("Index");
                     }
                 }
                 catch (Exception)

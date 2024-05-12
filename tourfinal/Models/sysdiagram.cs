@@ -12,11 +12,12 @@ namespace tourfinal.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Van
+    public partial class sysdiagram
     {
-        public int VanID { get; set; }
-        public string VanName { get; set; }
-        public Nullable<int> Capacity { get; set; }
-        public string Status { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

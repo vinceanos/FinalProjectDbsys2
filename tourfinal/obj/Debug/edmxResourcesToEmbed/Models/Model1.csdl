@@ -1,22 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="TsuperVansModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="Booking">
-    <Key>
-      <PropertyRef Name="BookingID" />
-    </Key>
-    <Property Name="BookingID" Type="Int32" Nullable="false" />
-    <Property Name="UserID" Type="Int32" />
-    <Property Name="VanID" Type="Int32" />
-    <Property Name="Date" Type="DateTime" Precision="0" />
-    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Feedback" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="History" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="User" Relationship="Self.FK_Booking_User" FromRole="Booking" ToRole="User" />
-    <NavigationProperty Name="Van" Relationship="Self.FK_Booking_Van" FromRole="Booking" ToRole="Van" />
-    <NavigationProperty Name="Payments" Relationship="Self.FK_Payment_Booking" FromRole="Booking" ToRole="Payment" />
-    <Property Name="DestinationID" Type="Int32" />
-    <NavigationProperty Name="DestinationDetail" Relationship="TsuperVansModel.FK_Booking_DestinationID" FromRole="Booking" ToRole="DestinationDetail" />
-  </EntityType>
   <EntityType Name="Payment">
     <Key>
       <PropertyRef Name="PaymentID" />
@@ -25,7 +8,6 @@
     <Property Name="BookingID" Type="Int32" />
     <Property Name="Amount" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="Date" Type="DateTime" Precision="0" />
-    <NavigationProperty Name="Booking" Relationship="Self.FK_Payment_Booking" FromRole="Payment" ToRole="Booking" />
   </EntityType>
   <EntityType Name="Review">
     <Key>
@@ -55,7 +37,6 @@
     <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="RoleID" Type="Int32" />
-    <NavigationProperty Name="Bookings" Relationship="Self.FK_Booking_User" FromRole="User" ToRole="Booking" />
     <NavigationProperty Name="Reviews" Relationship="Self.FK_Review_User" FromRole="User" ToRole="Review" />
     <NavigationProperty Name="Role" Relationship="Self.FK_UserRegistration_Role" FromRole="User" ToRole="Role" />
     <Property Name="status" Type="Int32" />
@@ -71,44 +52,7 @@
     <Property Name="VanName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Capacity" Type="Int32" />
     <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Bookings" Relationship="Self.FK_Booking_Van" FromRole="Van" ToRole="Booking" />
   </EntityType>
-  <Association Name="FK_Booking_User">
-    <End Role="User" Type="Self.User" Multiplicity="0..1" />
-    <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="User">
-        <PropertyRef Name="UserID" />
-      </Principal>
-      <Dependent Role="Booking">
-        <PropertyRef Name="UserID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Booking_Van">
-    <End Role="Van" Type="Self.Van" Multiplicity="0..1" />
-    <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Van">
-        <PropertyRef Name="VanID" />
-      </Principal>
-      <Dependent Role="Booking">
-        <PropertyRef Name="VanID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Payment_Booking">
-    <End Role="Booking" Type="Self.Booking" Multiplicity="0..1" />
-    <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Booking">
-        <PropertyRef Name="BookingID" />
-      </Principal>
-      <Dependent Role="Payment">
-        <PropertyRef Name="BookingID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Review_User">
     <End Role="User" Type="Self.User" Multiplicity="0..1" />
     <End Role="Review" Type="Self.Review" Multiplicity="*" />
@@ -134,24 +78,11 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="TsuperVansEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Bookings" EntityType="Self.Booking" />
     <EntitySet Name="Payments" EntityType="Self.Payment" />
     <EntitySet Name="Reviews" EntityType="Self.Review" />
     <EntitySet Name="Roles" EntityType="Self.Role" />
     <EntitySet Name="Users" EntityType="Self.User" />
     <EntitySet Name="Vans" EntityType="Self.Van" />
-    <AssociationSet Name="FK_Booking_User" Association="Self.FK_Booking_User">
-      <End Role="User" EntitySet="Users" />
-      <End Role="Booking" EntitySet="Bookings" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Booking_Van" Association="Self.FK_Booking_Van">
-      <End Role="Van" EntitySet="Vans" />
-      <End Role="Booking" EntitySet="Bookings" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Payment_Booking" Association="Self.FK_Payment_Booking">
-      <End Role="Booking" EntitySet="Bookings" />
-      <End Role="Payment" EntitySet="Payments" />
-    </AssociationSet>
     <AssociationSet Name="FK_Review_User" Association="Self.FK_Review_User">
       <End Role="User" EntitySet="Users" />
       <End Role="Review" EntitySet="Reviews" />
@@ -161,12 +92,13 @@
       <End Role="User" EntitySet="Users" />
     </AssociationSet>
     <EntitySet Name="DestinationDetails" EntityType="TsuperVansModel.DestinationDetail" />
-    <AssociationSet Name="FK_Booking_DestinationID" Association="TsuperVansModel.FK_Booking_DestinationID">
-      <End Role="DestinationDetail" EntitySet="DestinationDetails" />
-      <End Role="Booking" EntitySet="Bookings" />
-    </AssociationSet>
     <EntitySet Name="DriverUsers" EntityType="TsuperVansModel.DriverUser" />
     <EntitySet Name="Bookings1" EntityType="TsuperVansModel.Booking1" />
+    <EntitySet Name="sysdiagrams" EntityType="TsuperVansModel.sysdiagram" />
+    <AssociationSet Name="FK_Bookings_DestinationDetails" Association="TsuperVansModel.FK_Bookings_DestinationDetails">
+      <End Role="DestinationDetail" EntitySet="DestinationDetails" />
+      <End Role="Booking1" EntitySet="Bookings1" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="DestinationDetail">
     <Key>
@@ -177,20 +109,8 @@
     <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Location" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="ImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Bookings" Relationship="TsuperVansModel.FK_Booking_DestinationID" FromRole="DestinationDetail" ToRole="Booking" />
+    <NavigationProperty Name="Bookings1" Relationship="TsuperVansModel.FK_Bookings_DestinationDetails" FromRole="DestinationDetail" ToRole="Booking1" />
   </EntityType>
-  <Association Name="FK_Booking_DestinationID">
-    <End Type="TsuperVansModel.DestinationDetail" Role="DestinationDetail" Multiplicity="0..1" />
-    <End Type="TsuperVansModel.Booking" Role="Booking" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DestinationDetail">
-        <PropertyRef Name="DestinationID" />
-      </Principal>
-      <Dependent Role="Booking">
-        <PropertyRef Name="DestinationID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityType Name="DriverUser">
     <Key>
       <PropertyRef Name="UserID" />
@@ -202,7 +122,7 @@
   </EntityType>
   <EntityType Name="Booking1">
     <Key>
-      <PropertyRef Name="Booking_Date" />
+      <PropertyRef Name="BookingID" />
     </Key>
     <Property Name="Booking_Date" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="Booking_Number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
@@ -211,5 +131,29 @@
     <Property Name="Package_Booked" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="Price" Type="Decimal" Precision="10" Scale="2" />
     <Property Name="DestinationID" Type="Int32" />
+    <NavigationProperty Name="DestinationDetail" Relationship="TsuperVansModel.FK_Bookings_DestinationDetails" FromRole="Booking1" ToRole="DestinationDetail" />
+    <Property Name="BookingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
   </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Bookings_DestinationDetails">
+    <End Type="TsuperVansModel.DestinationDetail" Role="DestinationDetail" Multiplicity="0..1" />
+    <End Type="TsuperVansModel.Booking1" Role="Booking1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DestinationDetail">
+        <PropertyRef Name="DestinationID" />
+      </Principal>
+      <Dependent Role="Booking1">
+        <PropertyRef Name="DestinationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

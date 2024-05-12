@@ -11,7 +11,31 @@
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Add any additional CSS styles for your Home page here -->
     <style>
-        /* Custom CSS styles for the home page */
+        body {
+            background-image: url('/image/white2.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif; /* Specify the Google Font 'Poppins' */
+        }
+
+        .container {
+            padding-top: 50px; /* Add padding to the top of the container */
+        }
+
+        h2 {
+            text-align: center; /* Center-align the heading */
+            margin-bottom: 20px; /* Add space below the heading */
+            font-size: 36px; /* Adjust the font size */
+            color: #333; /* Set the font color */
+            text-transform: uppercase; /* Convert text to uppercase */
+            letter-spacing: 2px; /* Add letter spacing for better readability */
+            font-weight: bold; /* Make the font bold */
+        }
+
         .box-container {
             display: flex;
             flex-wrap: wrap;
@@ -23,24 +47,36 @@
             width: calc(33.33% - 20px);
             margin-bottom: 20px;
             padding: 20px;
-            border: 1px solid #ccc;
+            border: 3px solid #ccc;
             border-radius: 5px;
             text-align: center;
             transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
         }
 
             .box:hover {
-                transform: scale(1.05);
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                transform: scale(1.05) perspective(1000px) rotateX(0deg) rotateY(0deg); /* Reset to initial tilt */
+                box-shadow: 0 0 20px rgba(0, 80, 225, 0.7);
             }
 
             .box img {
-                max-width: 100%;
-                height: auto;
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
                 border-radius: 5px;
                 margin-bottom: 10px;
+                transition: transform 0.3s ease;
+            }
+
+            .box:hover img {
+                transform: scale(1.2); /* Zoom effect on image hover */
             }
     </style>
+
+    <!-- Include Google Fonts link -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -52,22 +88,21 @@
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script>
-        $(document).ready(function () {
-            // Destination data for the boxes
-            var destinations = [
-                { id: 1, title: "Destination 1", imageUrl: "~/Images/destination1.jpg" },
-                { id: 2, title: "Destination 2", imageUrl: "~/Images/destination2.jpg" },
-                { id: 3, title: "Destination 3", imageUrl: "~/Images/destination3.jpg" },
-                { id: 4, title: "Destination 4", imageUrl: "~/Images/destination4.jpg" },
-                { id: 5, title: "Destination 5", imageUrl: "~/Images/destination5.jpg" },
-                { id: 6, title: "Destination 6", imageUrl: "~/Images/destination6.jpg" },
-                { id: 7, title: "Destination 7", imageUrl: "~/Images/destination7.jpg" },
-                { id: 8, title: "Destination 8", imageUrl: "~/Images/destination8.jpg" },
-                { id: 9, title: "Destination 9", imageUrl: "~/Images/destination9.jpg" }
+    $(document).ready(function () {
+        // Destination data for the boxes
+        var destinations = [
+                { id: 1, title: "Tops", imageUrl: "/image/tops.jpg" },
+                { id: 2, title: "10000 Roses Cafe and More", imageUrl: "/image/rose.jpg" },
+                { id: 3, title: "Whale Shark Watching", imageUrl: "/image/oslob.jpg" },
+                { id: 4, title: "Anjo World", imageUrl: "/image/anjo.jpg" },
+                { id: 5, title: "Temple of Leah", imageUrl: "/image/temple.jpg" },
+                { id: 6, title: "Sirao Pictorial Garden", imageUrl: "/image/sirao.jpg" },
+                { id: 7, title: "Kawasan Falls", imageUrl: "/image/falls.jpg" },
+                { id: 8, title: "Safari", imageUrl: "/image/safari.jpg" },
+                { id: 9, title: "Magellan's Cross", imageUrl: "/image/cross.jpg" }
             ];
 
-            // Populate boxes using destination dataS
-            var boxContainer = $("#box-container");
+         var boxContainer = $("#box-container");
             destinations.forEach(function (destination) {
                 var box = $('<div class="box"></div>');
                 var image = $('<img src="' + destination.imageUrl + '" alt="' + destination.title + '">');
@@ -75,12 +110,35 @@
                 box.append(image);
                 box.append(title);
                 boxContainer.append(box);
-            });
+
+                // Add tilt effect on box hover
+                box.on("mousemove", function (event) {
+                    var boxRect = this.getBoundingClientRect();
+                    var offsetX = event.clientX - boxRect.left;
+                    var offsetY = event.clientY - boxRect.top;
+                    var centerX = boxRect.width / 2;
+                    var centerY = boxRect.height / 2;
+                    var tiltX = (offsetX - centerX) / 7;
+                    var tiltY = (offsetY - centerY) / 7;
+                    $(this).css("transform", "scale(1.05) perspective(1000px) rotateX(" + -tiltY + "deg) rotateY(" + tiltX + "deg)");
+                });
+
+                box.on("mouseleave", function () {
+                    $(this).css("transform", "scale(1) perspective(1000px) rotateX(0deg) rotateY(0deg)");
+                });
 
             // Add click event to navigate to destination detail page
-            $(".box").on("click", function () {
-                var destinationId = $(this).index() + 1;
-                window.location.href = '@Url.Action("DestinationDetail", "Home")' + '?id=' + destinationId;
+            box.on("click", function () {
+                    var destinationId = destination.id;
+                    // Apply transition effect
+                    $(this).css("transition", "transform 0.5s ease, opacity 0.5s ease");
+                    $(this).css("transform", "scale(1.2)"); // Zoom in effect
+                    $(this).css("opacity", "0"); // Fade out effect
+                    // Navigate to destination detail page after delay
+                    setTimeout(function () {
+                        window.location.href = '@Url.Action("DestinationDetail", "Home")' + '?id=' + destinationId;
+                    }, 500); // Delay in milliseconds (0.5 seconds)
+                });
             });
         });
     </script>

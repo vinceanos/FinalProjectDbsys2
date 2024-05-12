@@ -12,44 +12,109 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <style>
-        /* Custom CSS to style the carousel */
-        .carousel-inner .item {
+        /* Styles for carousel and background */
+        .carousel {
             width: 100%;
-            height: 300px; 
-            overflow: hidden; 
-            border-radius: 10px; 
-            border: 2px solid white; 
+            max-width: 600px;
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
         }
 
-        .carousel-inner .item img {
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover;
+        .carousel-inner .item {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 10px;
+            border: 2px solid white;
         }
+
+            .carousel-inner .item img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
 
         body {
             background-image: url('../../image/loginbackground.jpg');
             background-size: cover;
             background-repeat: no-repeat;
-            height: 100vh; 
-            margin: 0; 
-            padding: 0; 
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
         }
 
+        /* Form container and input field styles */
         .form-label {
-            color: white; 
+            color: white;
             font-weight: bold;
+        }
+
+        .form-container {
+            transition: opacity 0.5s ease-in-out;
+            opacity: 1;
+        }
+
+            .form-container.hidden {
+                opacity: 0;
+            }
+
+        /* Loading bar styles */
+        .loading-container {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 40px;
+            background-color: white;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+
+        .loading-bar {
+            height: 100%;
+            width: 0;
+            background-color: dodgerblue;
+            transition: width 4s ease;
+            position: relative;
+        }
+
+        .loading-text {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            color: white;
+            font-weight: bold;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Ensure consistent sizing for username and password inputs */
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            height: 40px; /* Set the height of input fields */
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            padding: 10px; /* Optional: Add padding inside input fields */
         }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script> 
+    <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
-            
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -59,8 +124,6 @@
                 </button>
                 <a class="navbar-brand" href="#">MY APP</a>
             </div>
-
-           
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
@@ -73,7 +136,6 @@
 
     <div class="container">
         <div id="imageCarousel" class="carousel slide" data-ride="carousel" data-interval="5000" data-wrap="true">
-            
             <div class="carousel-inner">
                 <div class="item active">
                     <img src="~/image/van1.jpg" alt="Van 1">
@@ -85,8 +147,6 @@
                     <img src="~/image/van3.jpg" alt="Van 3">
                 </div>
             </div>
-
-            <!-- Left and right controls -->
             <a class="left carousel-control" href="#imageCarousel" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left"></span>
                 <span class="sr-only">Previous</span>
@@ -97,7 +157,7 @@
             </a>
         </div>
 
-        <h2 style="color:white">Login</h2> 
+        <h2 style="color:white">Login</h2>
 
         @if (TempData["ErrorMessage"] != null)
         {
@@ -113,29 +173,26 @@
         }
         <div id="errorMessage" style="display:none; color:red;"></div>
 
-        @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "form-horizontal form-container", role = "form", id = "loginForm" }))
         {
             @Html.AntiForgeryToken()
-
             <div class="form-group">
                 @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2 form-label" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.UserName, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
                 </div>
             </div>
-
             <div class="form-group">
                 @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2 form-label" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                 </div>
             </div>
-
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Login" class="btn btn-success" />
+                    <input type="button" value="Login" class="btn btn-success" onclick="animateForm()" />
                 </div>
             </div>
         }
@@ -145,11 +202,43 @@
                 <p style="color:white">Don't have an account yet? <a href="@Url.Action("Signup", "Account")">Sign up</a></p>
             </div>
         </div>
+
+        <div class="loading-container">
+            <div class="loading-bar" id="loadingBar">
+                <div class="loading-text">CHECKING DATABASE...</div>
+            </div>
+        </div>
     </div>
 
     <script>
+        // Function to animate the form container and show loading bar on login button click
+        function animateForm() {
+            // Hide the form container
+            $(".form-container").addClass("hidden");
+
+            // Show the loading bar
+            $(".loading-container").fadeIn();
+
+            // Simulate progress by increasing the width of the loading bar over time
+            let progress = 0;
+            const progressBar = $("#loadingBar");
+            const interval = setInterval(function() {
+                progress += 10; // Increase progress (adjust this value based on desired speed)
+                progressBar.css("width", progress + "%");
+
+                // Check if progress reaches 100%
+                if (progress >= 100) {
+                    clearInterval(interval); // Stop the interval
+                    // Submit the form after a delay (simulating additional process time)
+                    setTimeout(function() {
+                        $("#loginForm").submit();
+                    }, 1000); // Adjust the delay as needed
+                }
+            }, 200); // Adjust the interval duration (lower value for smoother animation)
+        }
+
         // Activate carousel
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('#imageCarousel').carousel();
         });
     </script>

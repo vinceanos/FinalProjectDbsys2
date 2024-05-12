@@ -17,7 +17,7 @@ namespace tourfinal.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DestinationDetail()
         {
-            this.Bookings = new HashSet<Booking>();
+            this.Bookings1 = new HashSet<Booking1>();
         }
     
         public int DestinationID { get; set; }
@@ -27,6 +27,6 @@ namespace tourfinal.Models
         public string ImageURL { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Booking> Bookings { get; set; }
+        public virtual ICollection<Booking1> Bookings1 { get; set; }
     }
 }

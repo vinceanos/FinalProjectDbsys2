@@ -18,7 +18,5 @@ namespace tourfinal.Models
         public Nullable<int> BookingID { get; set; }
         public Nullable<decimal> Amount { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
-    
-        public virtual Booking Booking { get; set; }
     }
 }

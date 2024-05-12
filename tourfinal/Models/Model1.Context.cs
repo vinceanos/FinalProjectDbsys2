@@ -25,7 +25,6 @@ namespace tourfinal.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Booking> Bookings { get; set; }
         public virtual DbSet<Payment> Payments { get; set; }
         public virtual DbSet<Review> Reviews { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
@@ -34,5 +33,6 @@ namespace tourfinal.Models
         public virtual DbSet<DestinationDetail> DestinationDetails { get; set; }
         public virtual DbSet<DriverUser> DriverUsers { get; set; }
         public virtual DbSet<Booking1> Bookings1 { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

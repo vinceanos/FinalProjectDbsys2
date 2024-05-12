@@ -1,6 +1,9 @@
-﻿@model tourfinal.Models.Booking1
-@{
-    ViewBag.Title = "Destination Detail - " + Model.Destination.DestinationName;
+﻿@model tourfinal.DestinationBookingViewModel
+   
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
 }
 
 <div class="container">
@@ -8,35 +11,50 @@
 
     <div class="row">
         <div class="col-md-6">
-            <img src="@Model.Destination.ImageURL" class="img-fluid" alt="@Model.Destination.DestinationName">
+            <img src="@Model.ImageURL" class="img-fluid float-left mr-3" alt="@Model.Destination.DestinationName">
         </div>
-        <div class="col-md-6">
-            <p>@Model.Destination.Description</p>
-            <h4>Booking Details:</h4>
-            <form action="@Url.Action("BookNow", "Home", new { destinationID = Model.Destination.DestinationID })" method="post">
-                @Html.HiddenFor(model => model.Booking.BookingID)
-                <label>Booking Date:</label>
-                <input type="date" name="Booking.Booking_Date" value="@Model.Booking.Booking_Date.ToString()" required><br>
-                <label>Booking Number:</label>
-                <input type="text" name="Booking.Booking_Number" value="@Model.Booking.Booking_Number" required><br>
-                <label>Number of Travellers:</label>
-                <input type="number" name="Booking.Number_of_Travellers" value="@Model.Booking.Number_of_Travellers" required><br>
-                <label>Type of Booking:</label>
-                <input type="text" name="Booking.Type_of_Booking" value="@Model.Booking.Type_of_Booking" required><br>
-                <label>Package Booked:</label>
-                <input type="text" name="Booking.Package_Booked" value="@Model.Booking.Package_Booked" required><br>
-                <label>Price:</label>
-                <input type="number" step="0.01" name="Booking.Price" value="@Model.Booking.Price" required><br>
+            @if (Model.Destination.DestinationID == 1)
+            {
+                <p>Text specific to DestinationID 1</p>
+            }
+            else if (Model.Destination.DestinationID == 2)
+            {
+                <p>Text specific to DestinationID 2</p>
+            }
+            else if (Model.Destination.DestinationID == 3)
+            {
+                <p>Text specific to DestinationID 3</p>
+            }
+            else if (Model.Destination.DestinationID == 4)
+            {
+                <p>Text specific to DestinationID 4</p>
+            }
+            else if (Model.Destination.DestinationID == 5)
+            {
+                <p>Text specific to DestinationID 5</p>
+            }
+            else if (Model.Destination.DestinationID == 6)
+            {
+                <p>Text specific to DestinationID 6</p>
+            }
+            else if (Model.Destination.DestinationID == 7)
+            {
+                <p>Text specific to DestinationID 7</p>
+            }
+            else if (Model.Destination.DestinationID == 8)
+            {
+                <p>Text specific to DestinationID 8</p>
+            }
+            else if (Model.Destination.DestinationID == 9)
+            {
+                <p>Text specific to DestinationID 9</p>
+            }
+            
 
-                <!-- Add other booking details as needed -->
-
-                <button type="submit" class="btn btn-primary">Update Booking</button>
-            </form>
-            <div>
-                <h4>Ready to Explore?</h4>
-                <p>Book your trip now and experience the beauty of @Model.Destination.DestinationName!</p>
-                <a href="@Url.Action("BookNow", "Home", new { destinationID = Model.Destination.DestinationID })" class="btn btn-success">Book Now</a>
-            </div>
+            <h4>Ready to Explore?</h4>
+            <p>Book your trip now and experience the beauty of @Model.DestinationName</p>
+            <a href="@Url.Action("BookNow", "Home", new { destinationID = Model.Destination.DestinationID })" class="btn btn-success">Proceed to Booking</a>
         </div>
     </div>
 </div>
+

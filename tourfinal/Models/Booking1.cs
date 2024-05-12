@@ -21,5 +21,8 @@ namespace tourfinal.Models
         public string Package_Booked { get; set; }
         public Nullable<decimal> Price { get; set; }
         public Nullable<int> DestinationID { get; set; }
+        public int BookingID { get; set; }
+    
+        public virtual DestinationDetail DestinationDetail { get; set; }
     }
 }

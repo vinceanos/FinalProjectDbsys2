@@ -17,7 +17,6 @@ namespace tourfinal.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
-            this.Bookings = new HashSet<Booking>();
             this.Reviews = new HashSet<Review>();
         }
     
@@ -31,8 +30,6 @@ namespace tourfinal.Models
         public Nullable<System.DateTime> date_created { get; set; }
         public Nullable<System.DateTime> date_updated { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Booking> Bookings { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Review> Reviews { get; set; }
         public virtual Role Role { get; set; }
