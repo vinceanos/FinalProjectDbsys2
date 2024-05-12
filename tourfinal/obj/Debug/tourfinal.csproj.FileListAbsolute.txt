@@ -247,4 +247,3 @@ C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\FinalProjectDbsys2\tourfinal\bin\System
 C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\FinalProjectDbsys2\tourfinal\bin\System.Web.Mvc.xml
 C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\FinalProjectDbsys2\tourfinal\obj\Debug\tourfinal.dll
 C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\FinalProjectDbsys2\tourfinal\obj\Debug\tourfinal.pdb
-C:\Users\Vence\OneDrive\Desktop\BOOKBOOK\FinalProjectDbsys2\tourfinal\obj\Debug\tourfinal.csprojResolveAssemblyReference.cache

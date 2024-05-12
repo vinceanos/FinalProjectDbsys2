@@ -55,43 +55,33 @@ namespace tourfinal.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Users.Add(u);
-                if (db.SaveChanges() > 0)
+                
+                if (db.Users.Any(user => user.UserName == u.UserName))
                 {
-                    return RedirectToAction("Login");
+                    ModelState.AddModelError("Username", "Username already exists.");
                 }
-            }   
-            return View();
-        }
-        public ActionResult RegisterDriver()
-        {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult RegisterDriver(DriverUser m)
-        {
-            if (ModelState.IsValid)
-            {
-                var driverUser = new DriverUser
+               
+                if (db.Users.Any(user => user.Email == u.Email))
                 {
-                    // Populate other properties of the driver user from the registration form
-                    DriverLicenseNumber = m.DriverLicenseNumber,
-                    VehicleModel = m.VehicleModel,
-                    DestinationID = m.DestinationID  // SelectedDestinationID comes from the form
-                };
+                    ModelState.AddModelError("Email", "Email address already exists.");
+                }
 
-                db.DriverUsers.Add(driverUser);
-                db.SaveChanges();
-
-                // Redirect to a success page or another action
-                return RedirectToAction("RegistrationSuccess");
+                if (ModelState.IsValid)
+                {
+                    db.Users.Add(u);
+                    if (db.SaveChanges() > 0)
+                    {
+                        return RedirectToAction("Login");
+                    }
+                }
             }
-
-            // If model state is not valid, return to the registration form with validation errors
-            return View(m);
+            return View(u);
         }
 
-        public ActionResult Logout()
+    
+
+
+    public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
             Session["uname"] = null;

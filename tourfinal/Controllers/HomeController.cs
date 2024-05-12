@@ -16,11 +16,11 @@ namespace tourfinal.Controllers
     {
        
         
-            private readonly TsuperVansEntities db; // Use a private readonly field
+            private readonly TsuperVansEntities db; 
 
             public HomeController()
             {
-                db = new TsuperVansEntities(); // Initialize in the constructor
+                db = new TsuperVansEntities(); 
             }
 
         // GET: Home
@@ -52,7 +52,7 @@ namespace tourfinal.Controllers
             var viewModel = new DestinationBookingViewModel
             {
                 Destination = destination,
-                BookingID = booking // No need for casting
+                BookingID = booking 
             };
 
             return View(viewModel);
@@ -97,7 +97,12 @@ namespace tourfinal.Controllers
             return View(booking);
         }
 
-
+        [Authorize(Roles = "Admin")]
+        public ActionResult BookingManagement()
+        {
+            var bookings = db.Bookings1.ToList();
+            return View();
+        }
         // GET: Home/Details/5
         [Authorize(Roles = "Admin")]
         public ActionResult UserManagement()
