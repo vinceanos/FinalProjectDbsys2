@@ -4,64 +4,6 @@
     ViewBag.Title = "Signup";
 }
 
-<style>
-    body {
-        background-image: url('../../image/loginbackground.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 100vh;
-        margin: 0;
-        padding: 0;
-        color: white;
-    }
-
-    .control-label {
-        color: white;
-    }
-
-    .form-control {
-        background-color: rgba(255, 255, 255, 0.7);
-        color: black;
-    }
-
-    .signup-container {
-        margin-top: 50px;
-    }
-
-    h2 {
-        margin-top: 60px;
-        margin-bottom: 5px;
-    }
-
-  
-    .image-container {
-        margin-top: -10px;
-        text-align: center; 
-        position: relative; 
-    }
-
-        .image-container img {
-            margin-top: 0px;
-            max-width: 100%; 
-            height: auto; 
-            max-height: 500px; 
-            display: inline-block; 
-            filter: blur(1.5px);
-            border: solid;
-        }
-
-    .image-text {
-        position: absolute; 
-        top: 50%; 
-        left: 50%; 
-        transform: translate(-50%, -50%);
-        color: white; 
-        font-size: 30px; 
-        font-weight: bold; 
-        font-family: Brush Script MT; 
-        
-    }
-</style>
 
 <h2> SIGN-UP </h2>
 
@@ -115,7 +57,7 @@
 
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="Signup" class="btn btn-default" />
+                            <input type="submit" value="Signup" class="btn btn-success" />
                         </div>
                     </div>
                 </div>
@@ -144,3 +86,75 @@
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*----------------------------------------------------------------------*@
+<style>
+    body {
+        background-image: url('../../image/loginbackground.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        color: white;
+    }
+
+    .control-label {
+        color: white;
+    }
+
+    .form-control {
+        background-color: rgba(255, 255, 255, 0.7);
+        color: black;
+    }
+
+    .signup-container {
+        margin-top: 50px;
+    }
+
+    h2 {
+        margin-top: 60px;
+        margin-bottom: 5px;
+    }
+
+
+    .image-container {
+        margin-top: -10px;
+        text-align: center;
+        position: relative;
+    }
+
+        .image-container img {
+            margin-top: 0px;
+            max-width: 100%;
+            height: auto;
+            max-height: 500px;
+            display: inline-block;
+            filter: blur(1.5px);
+            border: solid;
+        }
+
+    .image-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        font-family: Brush Script MT;
+    }
+</style>

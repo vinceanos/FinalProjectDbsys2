@@ -1,5 +1,4 @@
 ﻿@model tourfinal.DestinationBookingViewModel
-   
 
 @if (TempData["SuccessMessage"] != null)
 {
@@ -9,52 +8,142 @@
 <div class="container">
     <h2>@Model.Destination.DestinationName</h2>
 
+    <style>
+        .row {
+            background-image: url('../../image/blue.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden; /* Ensure content inside .row is clipped to the container */
+        }
+
+        .rounded-image-container {
+            width: 150px; /* Set a fixed width for the container */
+            height: 150px; /* Set a fixed height for the container */
+            border-radius: 50%; /* Make the container a perfect circle */
+            overflow: hidden; /* Clip the image to the circle shape */
+            border: 5px solid #ffffff; /* White border around the circle */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px; /* Add spacing below the image */
+            background-color: #ffffff; /* White background color inside the container */
+        }
+
+        .rounded-image {
+            width: 100%; /* Ensure the image fills the container */
+            height: 100%; /* Ensure the image fills the container */
+            object-fit: cover; /* Maintain aspect ratio and fill the container */
+            border-radius: 50%; /* Make the image a perfect circle */
+        }
+    </style>
+
     <div class="row">
-        <div class="col-md-6">
-            <img src="@Model.ImageURL" class="img-fluid float-left mr-3" alt="@Model.Destination.DestinationName">
-        </div>
-            @if (Model.Destination.DestinationID == 1)
-            {
-                <p>Text specific to DestinationID 1</p>
-            }
-            else if (Model.Destination.DestinationID == 2)
-            {
-                <p>Text specific to DestinationID 2</p>
-            }
-            else if (Model.Destination.DestinationID == 3)
-            {
-                <p>Text specific to DestinationID 3</p>
-            }
-            else if (Model.Destination.DestinationID == 4)
-            {
-                <p>Text specific to DestinationID 4</p>
-            }
-            else if (Model.Destination.DestinationID == 5)
-            {
-                <p>Text specific to DestinationID 5</p>
-            }
-            else if (Model.Destination.DestinationID == 6)
-            {
-                <p>Text specific to DestinationID 6</p>
-            }
-            else if (Model.Destination.DestinationID == 7)
-            {
-                <p>Text specific to DestinationID 7</p>
-            }
-            else if (Model.Destination.DestinationID == 8)
-            {
-                <p>Text specific to DestinationID 8</p>
-            }
-            else if (Model.Destination.DestinationID == 9)
-            {
-                <p>Text specific to DestinationID 9</p>
-            }
-            
+        @if (Model.Destination.DestinationID == 1)
+        {
+            <div class="rounded-image-container">
+                <img src="~/image/west.jpg" alt="West Town Lagoon" class="rounded-image">
+            </div>
 
-            <h4>Ready to Explore?</h4>
-            <p>Book your trip now and experience the beauty of @Model.DestinationName</p>
-            <a href="@Url.Action("BookNow", "Home", new { destinationID = Model.Destination.DestinationID })" class="btn btn-success">Proceed to Booking</a>
-        </div>
+            <p>West Town Lagoon is a popular leisure destination located in Mandaue City, Cebu, Philippines. It is a water park and recreational complex that offers various attractions and activities for visitors of all ages. The lagoon features a large swimming pool with slides, waterfalls, and interactive water features, making it an ideal spot for families and friends to cool off and have fun. In addition to the pool area, West Town Lagoon has amenities such as cottages, restaurants, and picnic areas where guests can relax and enjoy meals or snacks. The ambiance is lively and perfect for gatherings, with music playing and a vibrant atmosphere. Overall, West Town Lagoon provides a refreshing escape from the city heat and is a great place to spend a day enjoying water activities and leisurely moments with loved ones.</p>
+        }
+        else if (Model.Destination.DestinationID == 2)
+        {
+            <div class="rounded-image-container">
+                <img src="~/image/mactan.jpg" alt="Be Resort Mactan" class="rounded-image">
+            </div>
+
+            <p>
+                Be Resort Mactan is a contemporary beachfront resort located in Punta Engaño Road, Mactan Island,
+                Cebu, Philippines. This stylish retreat offers modern accommodations with sea views, direct access to
+                a private beach area, and amenities such as swimming pools and spa facilities. Guests can indulge in
+                delicious cuisine at on-site restaurants and enjoy activities like snorkeling and diving. The resort
+                is known for its attentive service, making it an ideal choice for travelers seeking a relaxing beach
+                getaway with convenient access to Mactan Island's attractions and recreational opportunities.
+            </p>
+        }
+
+        else if (Model.Destination.DestinationID == 3)
+        {
+            <div class="rounded-image-container">
+                <img src="~/image/spa.jpg" alt="Be Resort Mactan" class="rounded-image">
+            </div>
+
+            <p>
+                Crimson Resort and Spa Mactan is a luxurious beachfront resort located in Mactan Island, Cebu,
+                Philippines. Set amidst tropical gardens and overlooking the crystal-clear waters of the Visayan Sea,
+                the resort offers upscale accommodations with modern amenities and private balconies or terraces.
+                Guests can enjoy multiple swimming pools, a pristine beach with water sports activities, and a
+                world-class spa offering rejuvenating treatments. The resort also features several dining options
+                serving a variety of cuisines, from casual beachfront fare to fine dining experiences. With its
+                serene ambiance, exceptional service, and range of facilities, Crimson Resort and Spa Mactan provides
+                a perfect retreat for travelers seeking relaxation and indulgence in a tropical paradise.
+            </p>
+        }
+        else if (Model.Destination.DestinationID == 4)
+        {
+            <div class="rounded-image-container">
+                <img src="~/image/atla.jpg" alt="Atla Cebu" class="rounded-image">
+            </div>
+
+            <p>
+                Atla Cebu is a luxurious forest-like resort located Cebu,
+                Philippines. Set amidst tropical gardens and overlooking the crystal-clear waters of the Visayan Sea,
+                the resort offers upscale accommodations with modern amenities and private balconies or terraces.
+                Guests can enjoy multiple swimming pools, a pristine beach with water sports activities, and a
+                world-class spa offering rejuvenating treatments. The resort also features several dining options
+                serving a variety of cuisines, from casual beachfront fare to fine dining experiences. With its
+                serene ambiance, exceptional service, and range of facilities, Crimson Resort and Spa Mactan provides
+                a perfect retreat for travelers seeking relaxation and indulgence in a tropical paradise.
+            </p>
+        }
+        else if (Model.Destination.DestinationID == 5)
+        {
+            <div class="rounded-image-container">
+                <img src="~/image/bluewater.jpg" alt="Blue Water Maribago Beach Resort" class="rounded-image">
+            </div>
+
+            <p>
+                CBluewater Maribago Beach Resort is a well-known beachfront resort located in Maribago,
+                Mactan Island, Cebu, Philippines. It is a popular destination for both local and international
+                travelers seeking a relaxing and luxurious beach getaway. The resort features beautifully
+                landscaped gardens, spacious accommodations ranging from rooms to villas, and stunning views
+                of the ocean. Guests can enjoy various amenities including multiple swimming pools, a private
+                beach area with water sports activities, a spa offering rejuvenating treatments, and several
+                dining options serving delicious local and international cuisine. Bluewater Maribago is known
+                for its warm Filipino hospitality, serene ambiance, and family-friendly atmosphere, making it
+                an ideal choice for couples, families, and groups looking for a memorable vacation experience
+                in Cebu.
+            </p>
+        }
+        else if (Model.Destination.DestinationID == 6)
+        {
+            <div class="rounded-image-container">
+                <img src="~/image/orchid.jpg" alt="Blue Orchid Resort" class="rounded-image">
+            </div>
+
+            <p>
+                Blue Orchid Resort is a charming boutique resort located in Moalboal, Cebu, Philippines.
+                Situated along the beautiful coastline of the island, the resort offers a tranquil and
+                intimate setting perfect for those seeking relaxation and adventure. Blue Orchid Resort
+                features comfortable and well-appointed accommodations ranging from standard rooms to
+                spacious suites, all designed with a tropical touch and modern amenities. Guests can
+                enjoy stunning ocean views, a pristine beachfront, and access to exciting activities
+                such as diving and snorkeling in Moalboal's famous marine sanctuaries. The resort also
+                boasts a swimming pool, restaurant serving delicious local and international cuisine,
+                and friendly staff dedicated to ensuring a memorable stay for every guest. Blue Orchid
+                Resort is a great choice for travelers looking for a peaceful retreat and unforgettable
+                experiences amidst Cebu's natural beauty.
+            </p>
+        }
+
+
+        <h4>Ready to Explore?</h4>
+        <p>Book your trip now and experience the beauty of @Model.Destination.DestinationName</p>
+        <a href="@Url.Action("BookNow", "Home", new { destinationID = Model.Destination.DestinationID })" class="btn btn-success">Proceed to Booking</a>
     </div>
-
-
+</div>

@@ -129,7 +129,43 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\anika.jpg" />
+    <Content Include="Content\images\anjo.jpg" />
+    <Content Include="Content\images\atla.jpg" />
+    <Content Include="Content\images\avila.jpg" />
+    <Content Include="Content\images\blue.jpg" />
+    <Content Include="Content\images\blue2.jpg" />
+    <Content Include="Content\images\bluewater.jpg" />
+    <Content Include="Content\images\cross.jpg" />
+    <Content Include="Content\images\dolphin.jpg" />
+    <Content Include="Content\images\falls.jpg" />
+    <Content Include="Content\images\gene.jpg" />
+    <Content Include="Content\images\langit.jpg" />
+    <Content Include="Content\images\loginbackground.jpg" />
+    <Content Include="Content\images\mactan.jpg" />
+    <Content Include="Content\images\mijares.jpg" />
+    <Content Include="Content\images\orchid.jpg" />
+    <Content Include="Content\images\oslob.jpg" />
+    <Content Include="Content\images\rose.jpg" />
+    <Content Include="Content\images\rvan.jpg" />
+    <Content Include="Content\images\safari.jpg" />
+    <Content Include="Content\images\service1.jpg" />
+    <Content Include="Content\images\service2.jpg" />
+    <Content Include="Content\images\service3.jpg" />
+    <Content Include="Content\images\sirao.jpg" />
+    <Content Include="Content\images\spa.jpg" />
+    <Content Include="Content\images\temple.jpg" />
+    <Content Include="Content\images\tops.jpg" />
+    <Content Include="Content\images\turtle.jpg" />
+    <Content Include="Content\images\van1.jpg" />
+    <Content Include="Content\images\van2.jpg" />
+    <Content Include="Content\images\van3.jpg" />
+    <Content Include="Content\images\vince.jpg" />
+    <Content Include="Content\images\west.jpg" />
+    <Content Include="Content\images\white.jpg" />
+    <Content Include="Content\images\white2.jpg" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\style.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="image\anika.jpg" />
@@ -197,13 +233,11 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Classes\BookingViewModel.cs" />
-    <Compile Include="Classes\Resources.cs" />
-    <Compile Include="Classes\UserManager.cs" />
+    <Compile Include="Classes\VerifyOTPViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Booking1Controller.cs" />
-    <Compile Include="Controllers\DestinationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="DestinationBookingViewModel.cs" />
+    <Compile Include="Classes\DestinationBookingViewModel.cs" />
     <Compile Include="Email\MailManager.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -283,6 +317,7 @@
     <Content Include="Views\Booking1\Edit.cshtml" />
     <Content Include="Views\Booking1\Index.cshtml" />
     <Content Include="Views\Home\BookNow.cshtml" />
+    <Content Include="Views\Account\VerifyOTP.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -294,7 +329,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Views\AdminTag\" />
     <Folder Include="Views\DestinationDetail\" />
-    <Folder Include="Views\Destination\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -1,10 +1,21 @@
 ﻿@model  tourfinal.Models.Booking1
 @{
     ViewBag.Title = "Bookings";
-    
+
 }
 
-
+<style>
+    body {
+        background-image: url('/image/white2.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
 <h2>Book Now</h2>
 @using (Html.BeginForm())
 {

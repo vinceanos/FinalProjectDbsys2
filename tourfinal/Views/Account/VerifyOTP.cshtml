@@ -1,0 +1,32 @@
+﻿@model tourfinal.Classes.VerifyOTPViewModel
+
+@{
+    ViewBag.Title = "Verify OTP";
+}
+
+<style>
+     body {
+            background-image: url('/image/white2.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 100vh;
+            margin: 0;
+            padding: 0; 
+           
+        }
+</style> 
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.UserId)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.OTP)
+        @Html.TextBoxFor(model => model.OTP, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Verify</button>
+}

@@ -217,35 +217,7 @@ namespace tourfinal.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-        [AllowAnonymous]
-        public ActionResult Email()
-        {
-            ViewBag.Error = "";
-            return View();
-        }
-        [AllowAnonymous]
-        [HttpPost, ValidateInput(false)]
-        public ActionResult Email(String mailTo, String mailBody, String mailSubject)
-        {
-            String strResult = String.Empty;
-            MailManager mail = new MailManager();
-            Random random = new Random();
-
-            int otp = random.Next(100000, 999999); // Generate a 6-digit OTP
-            var user = db.Users.FirstOrDefault(u => u.Email == mailTo);
-            if (user != null)
-            {
-                user.code = otp.ToString();
-                db.SaveChanges(); // Save OTP to the user's record in the database
-            }
-
-            // Append OTP message to the mail body
-            mailBody += "<br/><br/>Your OTP is: " + otp;
-
-            mail.SendEmail(mailTo, mailSubject, mailBody, ref strResult);
-            ViewBag.Error = strResult;
-            return View();
-        }
+       
 
         protected override void Dispose(bool disposing)
         {
