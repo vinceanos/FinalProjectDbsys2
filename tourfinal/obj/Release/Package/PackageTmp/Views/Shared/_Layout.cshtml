@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET GoTourCebu</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet"> <!-- Bootstrap CSS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script> <!-- Bootstrap JavaScript -->
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+
+    @RenderSection("styles", required: false) 
+</head>
+<body>
+    
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("GoTourCebu", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+
+                        <li>@Html.ActionLink("Services", "Service", "Home")</li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                           
+                           
+                            if (User.IsInRole("Admin") || User.IsInRole("Customer"))
+                            {
+                                <li> @Html.ActionLink("About us ", "About", "Home")</li>
+                                <li>@Html.ActionLink("User Manager", "UserManagement", "Home")</li>
+                                <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+                                <li>@Html.ActionLink("BookingManagement", "Index", "Booking1")</li>
+                               
+
+                            }
+
+                        }
+                        else
+
+                        {
+                            <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                        }
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+      
+
+            <div class="container body-content">
+                @RenderBody()
+                <hr />
+                <footer>
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+                </footer>
+            </div>
+
+            <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+            <script src="~/Scripts/bootstrap.min.js"></script>
+
+            @RenderSection("scripts", required: false)
+        </body>
+
+</html>

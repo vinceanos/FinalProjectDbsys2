@@ -33,12 +33,12 @@ namespace tourfinal.Controllers
                 {
                     if (!string.IsNullOrEmpty(user.code))
                     {
-                        // If the user has an OTP pending verification, redirect to the OTP verification page
+                       
                         return RedirectToAction("VerifyOTP", new { userId = user.UserID, returnUrl = ReturnUrl });
                     }
                     else
                     {
-                        // If the user does not have an OTP pending verification, log them in
+                        
                         FormsAuthentication.SetAuthCookie(u.UserName, false);
                         Session["uname"] = u.UserName;
                         if (!string.IsNullOrEmpty(ReturnUrl) && Url.IsLocalUrl(ReturnUrl))
@@ -82,14 +82,14 @@ namespace tourfinal.Controllers
                 if (ModelState.IsValid)
                 {
                     Random random = new Random();
-                    int otp = random.Next(100000, 999999); // Generate a 6-digit OTP
+                    int otp = random.Next(100000, 999999); 
 
                     // Save OTP to user's record in the database
-                    u.code = otp.ToString(); // Assign OTP to the 'code' property
+                    u.code = otp.ToString(); // save the otp to table User, column code
                     db.Users.Add(u);
                     db.SaveChanges();
 
-                    // Send OTP via email
+                   
                     string mailBody = $"Your OTP for signup is: {otp}";
                     MailManager mailManager = new MailManager();
                     string errorResponse = "";
@@ -109,7 +109,7 @@ namespace tourfinal.Controllers
                 }
             }
 
-            // If ModelState is not valid or any other condition fails, return the view with the current model
+          
             return View(u);
         }
 
@@ -121,29 +121,31 @@ namespace tourfinal.Controllers
             return View(new VerifyOTPViewModel { UserId = userId });
         }
 
+        
         [HttpPost]
         [AllowAnonymous]
-        public ActionResult VerifyOTP(VerifyOTPViewModel model)
+        public ActionResult VerifyOTP(int userId, string otp)
         {
-            var user = db.Users.FirstOrDefault(u => u.UserID == model.UserId);
+            var user = db.Users.FirstOrDefault(u => u.UserID == userId && u.code == otp);
 
-            if (user != null && TempData["OTP"] != null && user.code != null && user.code.Equals(TempData["OTP"].ToString()))
+            if (user != null)
             {
-                // If OTP is correct, remove the OTP from the user's record and proceed with signup
+              
                 user.code = null;
                 db.SaveChanges();
 
-                // Save the user to the database
-                db.Users.Add(user);
-                db.SaveChanges();
-
-
+                TempData["SuccessMessage"] = "OTP verification successful. You can now log in.";
                 return RedirectToAction("Login"); // Redirect to login page after OTP verification
             }
-           
-                return View(model);
+            else
+            {
+                ModelState.AddModelError("OTP", "Invalid OTP. Please try again.");
+                TempData["ErrorMessage"] = "Invalid OTP. Please try again.";
+                return RedirectToAction("VerifyOTP", new { userId = userId });
             }
-        
+        }
+
+
 
 
 

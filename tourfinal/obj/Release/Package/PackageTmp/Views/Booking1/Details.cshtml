@@ -1,0 +1,74 @@
+﻿@model tourfinal.Models.Booking1
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Booking1</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Booking_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Booking_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Booking_Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Booking_Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Number_of_Travellers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Number_of_Travellers)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type_of_Booking)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type_of_Booking)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Package_Booked)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Package_Booked)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DestinationDetail.DestinationName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DestinationDetail.DestinationName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BookingID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
